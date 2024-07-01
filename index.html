@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios de Estoque e Vendas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Gerenciamento de Estoque e Vendas</h1>
+
+    <section id="estoque">
+        <h2>Adicionar Produto ao Estoque</h2>
+        <form id="estoqueForm">
+            <input type="text" name="nomeProduto" id="nomeProduto" placeholder="Nome do Produto" required>
+            <input type="text" name="codigoProduto" id="codigoProduto" placeholder="Código do Produto" required>
+            <input type="number" name="quantidadeEstoque" id="quantidadeEstoque" placeholder="Quantidade" required>
+            <input type="number" name="precoUnitario" id="precoUnitario" placeholder="Preço Unitário" required>
+            <input type="text" name="categoria" id="categoria" placeholder="Categoria">
+            <input type="text" name="localizacao" id="localizacao" placeholder="Localização">
+            <input type="date" name="dataEntrada" id="dataEntrada" required>
+            <button type="submit">Adicionar Produto</button>
+        </form>
+        <table id="estoqueTable">
+            <thead>
+                <tr>
+                    <th>Nome do Produto</th>
+                    <th>Código do Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço Unitário</th>
+                    <th>Categoria</th>
+                    <th>Localização</th>
+                    <th>Data de Entrada</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <section id="vendas">
+        <h2>Registrar Venda</h2>
+        <form id="vendasForm">
+            <input type="date" name="dataVenda" id="dataVenda" required>
+            <input type="text" name="codigoProdutoVenda" id="codigoProdutoVenda" placeholder="Código do Produto" required>
+            <input type="number" name="quantidadeVenda" id="quantidadeVenda" placeholder="Quantidade" required>
+            <input type="number" name="valorTotal" id="valorTotal" placeholder="Valor Total" required>
+            <input type="text" name="cliente" id="cliente" placeholder="Cliente">
+            <input type="text" name="metodoPagamento" id="metodoPagamento" placeholder="Método de Pagamento">
+            <button type="submit">Registrar Venda</button>
+        </form>
+        <table id="vendasTable">
+            <thead>
+                <tr>
+                    <th>Data da Venda</th>
+                    <th>Código do Produto</th>
+                    <th>Nome do Produto</th>
+                    <th>Quantidade Vendida</th>
+                    <th>Valor Total</th>
+                    <th>Cliente</th>
+                    <th>Método de Pagamento</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <section id="relatorios">
+        <h2>Relatórios</h2>
+        <div>
+            <button id="gerarRelatorioEstoque">Gerar Relatório de Estoque</button>
+            <button id="gerarRelatorioVendas">Gerar Relatório de Vendas</button>
+            <button id="salvarRelatorioEstoque">Salvar Relatório de Estoque em PDF</button>
+            <button id="salvarRelatorioVendas">Salvar Relatório de Vendas em PDF</button>
+        </div>
+        <div id="relatoriosContent">
+            <!-- Relatórios serão gerados aqui -->
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
